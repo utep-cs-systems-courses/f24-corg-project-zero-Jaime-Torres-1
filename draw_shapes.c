@@ -26,3 +26,29 @@ void print_triangle(int leftCol, int size)
   }
 }
 
+// Prints arrow
+void print_arrow(){
+    int height = 5;
+    int width = 7;
+    int i,j;
+	
+    // Print the arrowhead
+    for (i = 0; i < height; i++) {
+        for (j = 0; j < width; j++) {
+            if (j >= (width / 2 - i) && j <= (width / 2 + i)) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    // Print the arrow stick
+    for (i = 0; i < height; i++) {
+        for (j = 0; j < width / 2; j++) {
+            printf(" ");
+        }
+        printf("|\n");
+    }
+}
