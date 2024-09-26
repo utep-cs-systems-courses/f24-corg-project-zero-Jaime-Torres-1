@@ -1,7 +1,8 @@
 # comments begin with #
 
 # for convenience, define variable $(OBJS) to list of object files
-OBJS= draw_shapes.o draw_chars.o 5x7-font.o uimain.o
+
+OBJS= draw_shapes.o draw_chars.o 5x7-font.o 8x12-font.o uimain.o
 
 # make has a "default rule" specifying how to build a an "object" file (.o) from a C source file (.c)
 #            this rule includes $(CFLAGS) as one of cc's parameters 
@@ -23,6 +24,9 @@ draw_chars.o: draw_chars.c draw.h
 
 5x7-font.o: 5x7-font.c draw.h
 	cc $(CFLAGS) -c 5x7-font.c
+
+8x12-font.o: 8x12-font.c draw.h
+	cc $(CFLAGS) -c 8x12-font.c
 
 uimain.o: uimain.c draw.h
 	cc $(CFLAGS) -c uimain.c
